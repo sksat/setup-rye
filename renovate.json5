@@ -6,9 +6,12 @@
   ],
   "additionalReviewers": ["sksat"],
   "regexManagers": [
-    "fileMatch": ["^action.yaml$"],
-    "matchStrings": [
-      "depName=(?<depName>.*?) datasource=(?<datasource>.*?)\\n\\s+default: \\'(?<currentValue>.*?)\\'",
-    ],
+    {
+      "fileMatch": ["^action.yaml$"],
+      "matchStrings": [
+        "depName=(?<depName>.*?) datasource=(?<datasource>.*?)\\n\\s+default: \\'(?<currentValue>.*?)\\'",
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    },
   ],
 }
