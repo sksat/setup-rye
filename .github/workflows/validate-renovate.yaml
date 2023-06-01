@@ -1,6 +1,9 @@
 name: validate renovate
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     paths:
       - 'renovate.json5'
