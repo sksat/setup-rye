@@ -1,5 +1,7 @@
 # setup-rye
 
+This composite action install [rye](https://github.com/mitsuhiko/rye).
+
 ## Example workflow
 ```yaml
 name: run pytest
