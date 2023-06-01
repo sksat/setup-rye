@@ -6,7 +6,7 @@
   ],
   "additionalReviewers": ["sksat"],
   "regexManagers": [
-    "fileMatch": ["^action.yaml"],
+    "fileMatch": ["^action.yaml$"],
     "matchStrings": [
       "depName=(?<depName>.*?) datasource=(?<datasource>.*?)\\n\\s+default: \\'(?<currentValue>.*?)\\'",
     ],
