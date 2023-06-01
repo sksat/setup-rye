@@ -1,6 +1,9 @@
 name: setup rye
 description: GitHub Action for setup mitsuhiko/rye
 author: '@sksat'
+branding:
+  icon: activity
+  color: green
 
 inputs:
   version:
