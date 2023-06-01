@@ -1,0 +1,22 @@
+name: setup rye
+description: GitHub Action for setup mitsuhiko/rye
+author: '@sksat'
+
+inputs:
+  version:
+    required: true
+    description: rye version
+    # renovate: depName=mitsuhiko/rye datasource=github-releases
+    default: '0.4.0'
+
+runs:
+  using: "composite"
+  steps:
+  - name: install rye
+    shell: bash
+    env:
+      RYE_INSTALL_OPTION: '--yes'
+      RYE_VERSION: ${{ inputs.version }}
+    run: |
+      curl -sSf https://rye-up.com/get | bash
+      echo "$HOME/.rye/shims" >> $GITHUB_PATH
