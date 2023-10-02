@@ -11,5 +11,5 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
-      - uses: sksat/setup-rye@v0.7.0
+      - uses: sksat/setup-rye@v0.8.0
 ```
