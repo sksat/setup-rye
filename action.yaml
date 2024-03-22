@@ -15,11 +15,23 @@ inputs:
 runs:
   using: "composite"
   steps:
+  - name: cache rye installation
+    id: cache-rye-installation
+    uses: actions/cache@v4.0.2
+    with:
+      key: ${{ runner.os }}-rye-installation
+      path: ~/.rye
+
   - name: install rye
+    if: steps.cache-rye-installation.outputs.cache-hit != 'true'
     shell: bash
     env:
       RYE_INSTALL_OPTION: '--yes'
       RYE_VERSION: ${{ inputs.version }}
     run: |
       curl -sSf https://rye-up.com/get | bash
+
+  - name: setup rye path
+    shell: bash
+    run: |
       echo "$HOME/.rye/shims" >> $GITHUB_PATH
