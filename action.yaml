@@ -26,8 +26,13 @@ runs:
       RYE_VERSION: ${{ inputs.version }}
     run: |
       curl -sSf https://rye-up.com/get | bash
+
+  - name: setup rye path
+    shell: bash
+    run: |
       echo "$HOME/.rye/shims" >> $GITHUB_PATH
-  - name: setup behavior
+
+  - name: setup uv behavior
     shell: bash
     if: ${{ inputs.use-uv == 'true' }}
     run: rye config --set-bool behavior.use-uv=true
