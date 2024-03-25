@@ -32,7 +32,7 @@ runs:
     run: |
       echo "$HOME/.rye/shims" >> $GITHUB_PATH
 
-  - name: setup behavior
+  - name: setup uv behavior
     shell: bash
     if: ${{ inputs.use-uv == 'true' }}
     run: rye config --set-bool behavior.use-uv=true
