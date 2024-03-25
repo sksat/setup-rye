@@ -10,7 +10,7 @@ inputs:
     required: true
     description: rye version
     # renovate: depName=mitsuhiko/rye datasource=github-releases
-    default: '0.30.0'
+    default: '0.31.0'
   use-uv:
     required: false
     description: behavior use use
