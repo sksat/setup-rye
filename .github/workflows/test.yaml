@@ -10,11 +10,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        runs-on:
+          - ubuntu-latest
+          - macos-latest
         use-uv:
           - true
           - false
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runs-on }}
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
