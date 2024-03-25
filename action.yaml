@@ -9,7 +9,7 @@ inputs:
   version:
     required: true
     description: rye version
-    # renovate: depName=mitsuhiko/rye datasource=github-releases
+    # renovate: depName=astral-sh/rye datasource=github-releases
     default: '0.30.0'
   use-uv:
     required: false
