@@ -11,6 +11,10 @@ inputs:
     description: rye version
     # renovate: depName=mitsuhiko/rye datasource=github-releases
     default: '0.30.0'
+  use-uv:
+    required: false
+    description: behavior use use
+    default: 'false'
 
 runs:
   using: "composite"
@@ -23,3 +27,7 @@ runs:
     run: |
       curl -sSf https://rye-up.com/get | bash
       echo "$HOME/.rye/shims" >> $GITHUB_PATH
+  - name: setup behavior
+    shell: bash
+    if: ${{ inputs.use-uv == 'true' }}
+    run: rye config --set-bool behavior.use-uv=true
