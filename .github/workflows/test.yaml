@@ -12,6 +12,7 @@ jobs:
       matrix:
         runs-on:
           - ubuntu-latest
+          - windows-latest
           - macos-latest
         use-uv:
           - true
