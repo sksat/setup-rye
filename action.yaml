@@ -35,6 +35,7 @@ runs:
     run: |
       curl -O "https://github.com/astral-sh/rye/releases/download/${RYE_VERSION}/rye-x86-windows.exe"
       ./rye-x86-windows.exe self install -y --modify-path
+      echo "$HOME\\.rye\\shims" >> $GITHUB_PATH
 
       rye --version
 
