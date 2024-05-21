@@ -33,7 +33,7 @@ runs:
     env:
       RYE_VERSION: ${{ inputs.version }}
     run: |
-      C:/msys64/usr/bin/wget.exe -O "https://github.com/astral-sh/rye/releases/download/${RYE_VERSION}/rye-x86-windows.exe"
+      C:/msys64/usr/bin/wget.exe -q "https://github.com/astral-sh/rye/releases/download/${RYE_VERSION}/rye-x86-windows.exe" -O rye-x86-windows.exe
       ./rye-x86-windows.exe self install -y --modify-path
       echo "$HOME\\.rye\\shims" >> $GITHUB_PATH
 
