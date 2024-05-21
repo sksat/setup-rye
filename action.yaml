@@ -36,6 +36,8 @@ runs:
       curl -O "https://github.com/astral-sh/rye/releases/download/${RYE_VERSION}/rye-x86-windows.exe"
       ./rye-x86-windows.exe self install -y --modify-path
 
+      rye --version
+
   - name: setup rye path
     shell: bash
     run: |
