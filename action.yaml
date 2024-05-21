@@ -20,12 +20,21 @@ runs:
   using: "composite"
   steps:
   - name: install rye
+    if: runner.os != 'Windows'
     shell: bash
     env:
       RYE_INSTALL_OPTION: '--yes'
       RYE_VERSION: ${{ inputs.version }}
     run: |
       curl -sSf https://rye-up.com/get | bash
+  - name: install rye (Windows)
+    if: runner.os == 'Windows'
+    shell: bash
+    env:
+      RYE_VERSION: ${{ inputs.version }}
+    run: |
+      wget "https://github.com/astral-sh/rye/releases/download/${RYE_VERSION}/rye-x86-windows.exe"
+      ./rye-x86-windows.exe self install -y
 
   - name: setup rye path
     shell: bash
