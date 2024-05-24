@@ -25,7 +25,7 @@ runs:
       RYE_INSTALL_OPTION: '--yes'
       RYE_VERSION: ${{ inputs.version }}
     run: |
-      curl -sSf https://rye-up.com/get | bash
+      curl -sSf https://rye.astral.sh/get | bash
 
   - name: setup rye path
     shell: bash
