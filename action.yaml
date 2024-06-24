@@ -10,7 +10,7 @@ inputs:
     required: true
     description: rye version
     # renovate: depName=astral-sh/rye datasource=github-releases
-    default: '0.34.0'
+    default: '0.35.0'
   use-uv:
     required: false
     description: behavior use use
