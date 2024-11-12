@@ -1,3 +1,7 @@
+> [!TIP]
+>
+> FYI: You might want to use [uv](https://github.com/astral-sh/uv) & [astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
+
 # setup-rye
 
 This composite action install [rye](https://github.com/mitsuhiko/rye).
